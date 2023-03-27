@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "cross-env PORT=3000 nodemon bin/www.js",
-    "start:4000": "cross-env PORT=4000 nodemon bin/www.js",
+    "start:8899": "cross-env PORT=8899 nodemon bin/www.js",
     "lint": "eslint ./ --fix --ext .js"
   },
   "dependencies": {

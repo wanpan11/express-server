@@ -3,7 +3,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 
-const logger = require('./logger');
+const logger = require('./utils/logger');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // 统一响应头;
 app.all('*', (req, res, next) => {
   const { headers: { origin } } = req;
-  const sites = ['http://bi.sky.yh:3000', 'http://bi.sky.yh:4000'];
+  const sites = ['http://dashboard.sky.yh:3000', 'http://dashboard.sky.yh:8899'];
 
   if (sites.indexOf(origin) > -1) {
     res.header('Access-Control-Allow-Origin', origin);
